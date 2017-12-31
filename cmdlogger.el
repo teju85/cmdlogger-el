@@ -78,7 +78,7 @@
   "[internal] Concat the contents of src file into dst file"
   (with-temp-buffer
     (find-file dst)
-    (end-of-buffer)
+    (goto-char (point-max))
     (insert-file-contents src)
     (save-buffer)
     (kill-buffer)))
