@@ -102,10 +102,13 @@
 
 (defun cmdlogger/--log-hook()
   "[internal] Main hook to log each command/keystroke"
-  (let ((command))
-    (setq command (format "\"%s\" %s\n"
-                          (key-description (this-command-keys))
-                          this-command))
+  (let ((command)
+        (cmdstr (format "%s" this-command)))
+    (if (eq "self-insert-command" cmdstr)
+        (setq cmdstr "."))
+    (setq command (format "%s %s\n"
+                          cmdstr
+                          (key-description (this-command-keys))))
     (setq cmdlogger/--strokes (push command cmdlogger/--strokes))
     (setq cmdlogger/--num-strokes (1+ cmdlogger/--num-strokes)))
   (if (>= cmdlogger/--num-strokes cmdlogger/save-threshold)
