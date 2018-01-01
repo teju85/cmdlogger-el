@@ -104,7 +104,7 @@
   "[internal] Main hook to log each command/keystroke"
   (let ((command)
         (cmdstr (format "%s" this-command)))
-    (if (eq "self-insert-command" cmdstr)
+    (if (string= "self-insert-command" cmdstr)
         (setq cmdstr "."))
     (setq command (format "%s %s\n"
                           cmdstr
