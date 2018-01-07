@@ -20,3 +20,11 @@ To disable this mode temporarily in your session:
     (cmdlogger-mode t)
 
 Use `customize` to figure out variables that can be customized.
+
+ANALYSIS
+========
+There's a very simple analysis script which just summarizes the entire history
+of keys/cmds stored so far. It needs quite a bit of polishing, but for now this
+should be a good start.
+
+    ./analyze.py /path/to/your/keys.txt Summarizer
