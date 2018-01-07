@@ -6,6 +6,12 @@ Installation process is currently manual. (I hope to add this to MELPA soon)
     ;; add this in your .emacs file
     (add-to-list 'load-path /path/to/cmdlogger-el)
 
+CAUTION
+=======
+Kindly note that the file 'cmdlogger/main-file' contains everything you have
+typed while inside the emacs session. So, it's generally NOT a good idea to
+share it with others! If you plan to do, it will be at your own risk.
+
 USAGE
 =====
 Include the following lines in your `.emacs` file:
